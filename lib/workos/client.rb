@@ -92,7 +92,7 @@ module WorkOS
       json = JSON.parse(response.body)
 
       case http_status
-      when 400
+      when 400, 403
         raise InvalidRequestError.new(
           message: json['message'],
           http_status: http_status,
